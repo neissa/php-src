@@ -78,6 +78,7 @@ timelib_rel_time *timelib_diff(timelib_time *one, timelib_time *two)
 		} else {
 			rt->h += dst_h_corr;
 			rt->i += dst_m_corr;
+			timelib_do_rel_normalize(rt->invert ? one : two, rt);
 		}
 	}
 
